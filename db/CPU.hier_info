@@ -1,0 +1,68 @@
+|CPU
+seg_a <= encoder_display:inst.seg_a
+A => encoder_display:inst.A
+B => encoder_display:inst.B
+C => encoder_display:inst.C
+D => encoder_display:inst.D
+seg_b <= encoder_display:inst.seg_b
+seg_c <= encoder_display:inst.seg_c
+seg_e <= encoder_display:inst.seg_e
+seg_f <= encoder_display:inst.seg_f
+seg_g <= encoder_display:inst.seg_g
+seg_d <= encoder_display:inst.seg_d
+
+
+|CPU|encoder_display:inst
+seg_a <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+A => inst3.IN0
+A => inst14.IN0
+A => inst9.IN0
+A => inst7.IN0
+A => inst19.IN0
+A => inst25.IN0
+A => inst34.IN0
+A => inst38.IN0
+D => inst3.IN1
+D => inst.IN0
+D => inst9.IN2
+D => inst7.IN1
+D => inst17.IN0
+D => inst26.IN1
+D => inst23.IN2
+D => inst29.IN2
+D => inst27.IN1
+D => inst33.IN2
+D => inst34.IN3
+D => inst35.IN0
+D => inst39.IN3
+B => inst1.IN0
+B => inst.IN1
+B => inst8.IN0
+B => inst10.IN0
+B => inst19.IN1
+B => inst15.IN0
+B => inst26.IN0
+B => inst23.IN0
+B => inst28.IN1
+B => inst34.IN1
+B => inst38.IN1
+B => inst39.IN1
+C => inst1.IN1
+C => inst16.IN0
+C => inst9.IN1
+C => inst10.IN1
+C => inst20.IN1
+C => inst999.IN2
+C => inst25.IN2
+C => inst23.IN1
+C => inst33.IN1
+C => inst35.IN1
+C => inst39.IN2
+seg_b <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+seg_c <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+seg_d <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+seg_e <= inst31.DB_MAX_OUTPUT_PORT_TYPE
+seg_f <= inst36.DB_MAX_OUTPUT_PORT_TYPE
+seg_g <= inst40.DB_MAX_OUTPUT_PORT_TYPE
+
+
