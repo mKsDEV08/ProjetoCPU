@@ -65,4 +65,26 @@ set_global_assignment -name BDF_FILE xor3.bdf
 set_global_assignment -name BDF_FILE full_adder.bdf
 set_global_assignment -name BDF_FILE adder_4bit.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_location_assignment PIN_AA14 -to A1
+set_location_assignment PIN_AA13 -to A2
+set_location_assignment PIN_AB13 -to A3
+set_location_assignment PIN_AB12 -to A4
+set_location_assignment PIN_T13 -to B1
+set_location_assignment PIN_AA15 -to B3
+set_location_assignment PIN_T12 -to B2
+set_location_assignment PIN_AB15 -to B4
+set_location_assignment PIN_U21 -to D00
+set_location_assignment PIN_V21 -to D01
+set_location_assignment PIN_W22 -to D02
+set_location_assignment PIN_W21 -to D03
+set_location_assignment PIN_Y22 -to D04
+set_location_assignment PIN_Y21 -to D05
+set_location_assignment PIN_AA20 -to D10
+set_location_assignment PIN_AB20 -to D11
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_AA22 -to D06
+set_location_assignment PIN_AA19 -to D12
+set_location_assignment PIN_AA18 -to D13
+set_location_assignment PIN_AB18 -to D14
+set_location_assignment PIN_AA17 -to D15
+set_location_assignment PIN_U22 -to D16
