@@ -108,6 +108,13 @@ on the Quartus Prime software download page.
 		(text "S4" (rect 59 75 75 89)(font "Intel Clear" (font_size 8)))
 		(line (pt 96 80)(pt 80 80))
 	)
+	(port
+		(pt 96 96)
+		(output)
+		(text "Cout" (rect 0 0 27 14)(font "Intel Clear" (font_size 8)))
+		(text "Cout" (rect 48 91 75 105)(font "Intel Clear" (font_size 8)))
+		(line (pt 96 96)(pt 80 96))
+	)
 	(drawing
 		(rectangle (rect 16 16 80 176))
 	)
