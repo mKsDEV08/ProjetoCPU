@@ -1,168 +1,20 @@
 |CPU
-D10 <= encoder_display:inst.seg_a
-A1 => adder_4bit:inst5.A1
-A2 => adder_4bit:inst5.A2
-A3 => adder_4bit:inst5.A3
-A4 => adder_4bit:inst5.A4
-B1 => adder_4bit:inst5.B1
-B2 => adder_4bit:inst5.B2
-B3 => adder_4bit:inst5.B3
-B4 => adder_4bit:inst5.B4
-D11 <= encoder_display:inst.seg_b
-D12 <= encoder_display:inst.seg_c
-D13 <= encoder_display:inst.seg_d
-D14 <= encoder_display:inst.seg_e
-D15 <= encoder_display:inst.seg_f
-D16 <= encoder_display:inst.seg_g
 D00 <= encoder_display:inst4.seg_a
+A1 => 4bit_subtractor:inst.A1
+A2 => 4bit_subtractor:inst.A2
+A3 => 4bit_subtractor:inst.A3
+A4 => 4bit_subtractor:inst.A4
+B1 => 4bit_subtractor:inst.B1
+B2 => 4bit_subtractor:inst.B2
+B3 => 4bit_subtractor:inst.B3
+B4 => 4bit_subtractor:inst.B4
 D01 <= encoder_display:inst4.seg_b
 D02 <= encoder_display:inst4.seg_c
 D03 <= encoder_display:inst4.seg_d
 D04 <= encoder_display:inst4.seg_e
 D05 <= encoder_display:inst4.seg_f
 D06 <= encoder_display:inst4.seg_g
-
-
-|CPU|encoder_display:inst
-seg_a <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-D => inst3.IN0
-D => inst14.IN0
-D => inst9.IN0
-D => inst7.IN0
-D => inst19.IN0
-D => inst25.IN0
-D => inst34.IN0
-D => inst38.IN0
-A => inst3.IN1
-A => inst.IN0
-A => inst9.IN2
-A => inst7.IN1
-A => inst17.IN0
-A => inst26.IN1
-A => inst23.IN2
-A => inst29.IN2
-A => inst27.IN1
-A => inst33.IN2
-A => inst34.IN3
-A => inst35.IN0
-A => inst39.IN3
-C => inst1.IN0
-C => inst.IN1
-C => inst8.IN0
-C => inst10.IN0
-C => inst19.IN1
-C => inst15.IN0
-C => inst26.IN0
-C => inst23.IN0
-C => inst28.IN1
-C => inst34.IN1
-C => inst38.IN1
-C => inst39.IN1
-B => inst1.IN1
-B => inst16.IN0
-B => inst9.IN1
-B => inst10.IN1
-B => inst20.IN1
-B => inst999.IN2
-B => inst25.IN2
-B => inst23.IN1
-B => inst33.IN1
-B => inst35.IN1
-B => inst39.IN2
-seg_b <= inst11.DB_MAX_OUTPUT_PORT_TYPE
-seg_c <= inst21.DB_MAX_OUTPUT_PORT_TYPE
-seg_d <= inst22.DB_MAX_OUTPUT_PORT_TYPE
-seg_e <= inst31.DB_MAX_OUTPUT_PORT_TYPE
-seg_f <= inst36.DB_MAX_OUTPUT_PORT_TYPE
-seg_g <= inst40.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|adder_4bit:inst5
-S1 <= half_adder:inst.S
-A1 => half_adder:inst.A
-B1 => half_adder:inst.B
-S2 <= full_adder:inst6.S
-A2 => full_adder:inst6.A
-B2 => full_adder:inst6.B
-S3 <= full_adder:inst7.S
-A3 => full_adder:inst7.A
-B3 => full_adder:inst7.B
-S4 <= full_adder:inst9.S
-A4 => full_adder:inst9.A
-B4 => full_adder:inst9.B
-Cout <= full_adder:inst9.Cout
-
-
-|CPU|adder_4bit:inst5|half_adder:inst
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst2.IN0
-B => inst.IN1
-B => inst2.IN1
-Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|adder_4bit:inst5|full_adder:inst6
-S <= xor3:inst.OUT
-A => xor3:inst.A
-A => inst5.IN0
-A => inst4.IN0
-B => xor3:inst.B
-B => inst6.IN0
-B => inst4.IN1
-Cin => xor3:inst.C
-Cin => inst5.IN1
-Cin => inst6.IN1
-Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|adder_4bit:inst5|full_adder:inst6|xor3:inst
-OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-B => inst1.IN0
-C => inst1.IN1
-
-
-|CPU|adder_4bit:inst5|full_adder:inst7
-S <= xor3:inst.OUT
-A => xor3:inst.A
-A => inst5.IN0
-A => inst4.IN0
-B => xor3:inst.B
-B => inst6.IN0
-B => inst4.IN1
-Cin => xor3:inst.C
-Cin => inst5.IN1
-Cin => inst6.IN1
-Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|adder_4bit:inst5|full_adder:inst7|xor3:inst
-OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-B => inst1.IN0
-C => inst1.IN1
-
-
-|CPU|adder_4bit:inst5|full_adder:inst9
-S <= xor3:inst.OUT
-A => xor3:inst.A
-A => inst5.IN0
-A => inst4.IN0
-B => xor3:inst.B
-B => inst6.IN0
-B => inst4.IN1
-Cin => xor3:inst.C
-Cin => inst5.IN1
-Cin => inst6.IN1
-Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|adder_4bit:inst5|full_adder:inst9|xor3:inst
-OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-B => inst1.IN0
-C => inst1.IN1
+Signal <= 4bit_subtractor:inst.Signal
 
 
 |CPU|encoder_display:inst4
@@ -217,5 +69,187 @@ seg_d <= inst22.DB_MAX_OUTPUT_PORT_TYPE
 seg_e <= inst31.DB_MAX_OUTPUT_PORT_TYPE
 seg_f <= inst36.DB_MAX_OUTPUT_PORT_TYPE
 seg_g <= inst40.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst
+S1 <= mux_2x1_4bit:inst5.S1
+A1 => half_subtractor:inst.A
+A1 => half_subtractor:inst6.B
+B1 => half_subtractor:inst.B
+B1 => half_subtractor:inst6.A
+A2 => full_subtractor:inst2.A
+A2 => full_subtractor:inst7.B
+B2 => full_subtractor:inst2.B
+B2 => full_subtractor:inst7.A
+A3 => full_subtractor:inst3.A
+A3 => full_subtractor:inst8.B
+B3 => full_subtractor:inst3.B
+B3 => full_subtractor:inst8.A
+A4 => full_subtractor:inst4.A
+A4 => full_subtractor:inst9.B
+B4 => full_subtractor:inst4.B
+B4 => full_subtractor:inst9.A
+S2 <= mux_2x1_4bit:inst5.S2
+S3 <= mux_2x1_4bit:inst5.S3
+S4 <= mux_2x1_4bit:inst5.S4
+Signal <= full_subtractor:inst4.Cout
+
+
+|CPU|4bit_subtractor:inst|mux_2x1_4bit:inst5
+S1 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+B1 => inst7.IN0
+S => inst7.IN1
+S => inst.IN0
+S => inst13.IN1
+S => inst4.IN1
+S => inst2.IN1
+A1 => inst8.IN0
+S2 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+B2 => inst13.IN0
+A2 => inst6.IN0
+S3 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+B3 => inst4.IN0
+A3 => inst5.IN0
+S4 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+B4 => inst2.IN0
+A4 => inst3.IN0
+
+
+|CPU|4bit_subtractor:inst|half_subtractor:inst
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst3.IN1
+Cout <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|half_subtractor:inst6
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+A => inst2.IN0
+B => inst.IN1
+B => inst3.IN1
+Cout <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst2
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst2|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst7
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst7|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst3
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst3|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst8
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst8|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst4
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst4|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst9
+S <= xor3:inst.OUT
+A => xor3:inst.A
+A => inst3.IN0
+B => xor3:inst.B
+B => inst6.IN0
+B => inst4.IN1
+Cin => xor3:inst.C
+Cin => inst5.IN1
+Cin => inst6.IN1
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|4bit_subtractor:inst|full_subtractor:inst9|xor3:inst
+OUT <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst.IN0
+B => inst1.IN0
+C => inst1.IN1
 
 
