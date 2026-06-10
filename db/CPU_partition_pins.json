@@ -4,67 +4,127 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "D00",
+					"name" : "LED8",
 					"strict" : false
 				},
 				{
-					"name" : "D01",
+					"name" : "LED9",
 					"strict" : false
 				},
 				{
-					"name" : "D02",
+					"name" : "Hex0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "D03",
+					"name" : "Hex0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "D04",
+					"name" : "Hex0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "D05",
+					"name" : "Hex0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "D06",
+					"name" : "Hex0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Signal",
+					"name" : "Hex0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "A1",
+					"name" : "Hex0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "B1",
+					"name" : "Hex1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "A2",
+					"name" : "Hex1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "B2",
+					"name" : "Hex1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "A4",
+					"name" : "Hex1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "B4",
+					"name" : "Hex2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "A3",
+					"name" : "Hex2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "B3",
+					"name" : "Hex2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Hex3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW0",
+					"strict" : false
+				},
+				{
+					"name" : "SW8",
+					"strict" : false
+				},
+				{
+					"name" : "SW1",
+					"strict" : false
+				},
+				{
+					"name" : "SW2",
+					"strict" : false
+				},
+				{
+					"name" : "SW3",
+					"strict" : false
+				},
+				{
+					"name" : "SW9",
 					"strict" : false
 				}
 			]

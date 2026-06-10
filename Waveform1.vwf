@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="C:/Users/17919510/Desktop/ProjetoCPU/Waveform1.vwf" --testbench_file="C:/Users/17919510/Desktop/ProjetoCPU/simulation/qsim/Waveform1.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="C:/Users/17919510/Desktop/ProjetoCPU/Waveform1.vwf" --testbench_file="C:/Users/17919510/Desktop/ProjetoCPU/simulation/qsim/Waveform1.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/17919510/Desktop/ProjetoCPU/simulation/qsim/" CPU -c CPU</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/17919510/Desktop/ProjetoCPU/simulation/qsim/" CPU -c CPU</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/home/mks/Documentos/ELD/ProjetoCPU/Waveform1.vwf" --testbench_file="/home/mks/Documentos/ELD/ProjetoCPU/simulation/qsim/Waveform1.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off CPU -c CPU --vector_source="/home/mks/Documentos/ELD/ProjetoCPU/Waveform1.vwf" --testbench_file="/home/mks/Documentos/ELD/ProjetoCPU/simulation/qsim/Waveform1.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/mks/Documentos/ELD/ProjetoCPU/simulation/qsim/" CPU -c CPU</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="/home/mks/Documentos/ELD/ProjetoCPU/simulation/qsim/" CPU -c CPU</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work CPU.vo
@@ -76,7 +76,7 @@ HEADER
 	GRID_DUTY_CYCLE = 50;
 }
 
-SIGNAL("A")
+SIGNAL("CLK")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -86,27 +86,7 @@ SIGNAL("A")
 	PARENT = "";
 }
 
-SIGNAL("B")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("Cin")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("Cout")
+SIGNAL("S1")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -116,7 +96,7 @@ SIGNAL("Cout")
 	PARENT = "";
 }
 
-SIGNAL("S")
+SIGNAL("S2")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -126,7 +106,27 @@ SIGNAL("S")
 	PARENT = "";
 }
 
-TRANSITION_LIST("A")
+SIGNAL("S3")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("S4")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+TRANSITION_LIST("CLK")
 {
 	NODE
 	{
@@ -140,57 +140,49 @@ TRANSITION_LIST("A")
 	}
 }
 
-TRANSITION_LIST("B")
+TRANSITION_LIST("S1")
 {
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 4;
-			LEVEL 0 FOR 1000.0;
-			LEVEL 1 FOR 1000.0;
-		}
+		LEVEL X FOR 999.0;
+		LEVEL 0 FOR 7001.0;
 	}
 }
 
-TRANSITION_LIST("Cin")
+TRANSITION_LIST("S2")
 {
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 1500.0;
-			LEVEL 1 FOR 1500.0;
-		}
-		LEVEL 0 FOR 1500.0;
-		LEVEL 1 FOR 500.0;
+		LEVEL X FOR 999.0;
+		LEVEL 0 FOR 7001.0;
 	}
 }
 
-TRANSITION_LIST("Cout")
+TRANSITION_LIST("S3")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 8000.0;
+		LEVEL X FOR 999.0;
+		LEVEL 0 FOR 7001.0;
 	}
 }
 
-TRANSITION_LIST("S")
+TRANSITION_LIST("S4")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 8000.0;
+		LEVEL X FOR 999.0;
+		LEVEL 0 FOR 7001.0;
 	}
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "A";
+	CHANNEL = "CLK";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 0;
@@ -199,7 +191,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "B";
+	CHANNEL = "S1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -208,7 +200,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Cin";
+	CHANNEL = "S2";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -217,7 +209,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Cout";
+	CHANNEL = "S3";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 3;
@@ -226,7 +218,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "S";
+	CHANNEL = "S4";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 4;
