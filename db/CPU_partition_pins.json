@@ -140,7 +140,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
 					"name" : "SW9",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
 					"strict" : false
 				}
 			]

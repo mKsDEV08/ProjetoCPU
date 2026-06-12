@@ -1,7 +1,8 @@
 |CPU
 LED8 <= 2bit_counter:inst.Q2
-SW9 => 2bit_counter:inst.CLK
-SW9 => 4x4_memory:inst2.CLK
+CLK => debouncer:inst1.clk_fpga
+RST => debouncer:inst1.rst_debouncer
+SW9 => debouncer:inst1.input_key
 LED9 <= 2bit_counter:inst.Q1
 Q1 <= 4x4_memory:inst2.Q1
 Q2 <= 4x4_memory:inst2.Q2
@@ -55,6 +56,50 @@ Q2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
 
 |CPU|2bit_counter:inst|LPM_CONSTANT:inst4
 result[0] <= <VCC>
+
+
+|CPU|debouncer:inst1
+clk_fpga => counter[0].CLK
+clk_fpga => counter[1].CLK
+clk_fpga => counter[2].CLK
+clk_fpga => counter[3].CLK
+clk_fpga => counter[4].CLK
+clk_fpga => counter[5].CLK
+clk_fpga => counter[6].CLK
+clk_fpga => counter[7].CLK
+clk_fpga => counter[8].CLK
+clk_fpga => counter[9].CLK
+clk_fpga => counter[10].CLK
+clk_fpga => counter[11].CLK
+clk_fpga => counter[12].CLK
+clk_fpga => counter[13].CLK
+clk_fpga => counter[14].CLK
+clk_fpga => counter[15].CLK
+clk_fpga => out_key~reg0.CLK
+clk_fpga => intermediate.CLK
+rst_debouncer => counter[0].ACLR
+rst_debouncer => counter[1].ACLR
+rst_debouncer => counter[2].ACLR
+rst_debouncer => counter[3].ACLR
+rst_debouncer => counter[4].ACLR
+rst_debouncer => counter[5].ACLR
+rst_debouncer => counter[6].ACLR
+rst_debouncer => counter[7].ACLR
+rst_debouncer => counter[8].ACLR
+rst_debouncer => counter[9].ACLR
+rst_debouncer => counter[10].ACLR
+rst_debouncer => counter[11].ACLR
+rst_debouncer => counter[12].ACLR
+rst_debouncer => counter[13].ACLR
+rst_debouncer => counter[14].ACLR
+rst_debouncer => counter[15].ACLR
+rst_debouncer => out_key~reg0.ALOAD
+rst_debouncer => intermediate.ALOAD
+input_key => always0.IN1
+input_key => out_key~reg0.ADATA
+input_key => intermediate.ADATA
+input_key => intermediate.DATAIN
+out_key <= out_key~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|4x4_memory:inst2
